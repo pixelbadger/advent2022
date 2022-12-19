@@ -41,6 +41,23 @@ namespace Advent2022
 
             foreach (var tuple in tuples)
             {
+                for (var i = 0; i < tuple.Quantity; i++)
+                {
+                    var value = _stacks[tuple.From].Pop();
+                    _stacks[tuple.To].Push(value);
+                }
+            }
+        }
+
+        public void ProcessInstructionInputPt2()
+        {
+            var tuples = _input
+                .Select(i => i.Replace("move ", "").Replace("from ", "").Replace("to ", ""))
+                .Select(i => i.Split(" "))
+                .Select(i => (Quantity: int.Parse(i[0]), From: int.Parse(i[1]) - 1, To: int.Parse(i[2]) - 1));
+
+            foreach (var tuple in tuples)
+            {
                 var stack = new Stack<char>();
                 for (var i = 0; i < tuple.Quantity; i++)
                 {

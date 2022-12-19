@@ -28,4 +28,8 @@ Console.WriteLine();
 Console.WriteLine("**** Day 5 ****");
 var day5 = new Day5("./data/day5.txt");
 day5.ProcessInstructionInput();
-Console.WriteLine($"The crates on top of each stack are: {day5.TopCrates}");
+Console.WriteLine($"The crates on top of each stack using the CrateMover9000: {day5.TopCrates}");
+
+day5 = new Day5("./data/day5.txt");
+day5.ProcessInstructionInputPt2();
+Console.WriteLine($"The crates on top of each stack using the CrateMover9001: {day5.TopCrates}");
