@@ -1,0 +1,15 @@
+C:\repos\advent2022\bin\Debug\net7.0\advent2022.exe
+C:\repos\advent2022\bin\Debug\net7.0\advent2022.deps.json
+C:\repos\advent2022\bin\Debug\net7.0\advent2022.runtimeconfig.json
+C:\repos\advent2022\bin\Debug\net7.0\advent2022.dll
+C:\repos\advent2022\bin\Debug\net7.0\advent2022.pdb
+C:\repos\advent2022\obj\Debug\net7.0\advent2022.csproj.AssemblyReference.cache
+C:\repos\advent2022\obj\Debug\net7.0\advent2022.GeneratedMSBuildEditorConfig.editorconfig
+C:\repos\advent2022\obj\Debug\net7.0\advent2022.AssemblyInfoInputs.cache
+C:\repos\advent2022\obj\Debug\net7.0\advent2022.AssemblyInfo.cs
+C:\repos\advent2022\obj\Debug\net7.0\advent2022.csproj.CoreCompileInputs.cache
+C:\repos\advent2022\obj\Debug\net7.0\advent2022.dll
+C:\repos\advent2022\obj\Debug\net7.0\refint\advent2022.dll
+C:\repos\advent2022\obj\Debug\net7.0\advent2022.pdb
+C:\repos\advent2022\obj\Debug\net7.0\advent2022.genruntimeconfig.cache
+C:\repos\advent2022\obj\Debug\net7.0\ref\advent2022.dll
