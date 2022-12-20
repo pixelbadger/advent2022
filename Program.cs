@@ -37,3 +37,16 @@ Console.WriteLine();
 Console.WriteLine("**** Day 6 ****");
 var day6 = new Day6("./data/day6.txt");
 Console.WriteLine($"Characters before first packet: {day6.CharactersBeforeStartOfPacket()}");
+
+Console.WriteLine();
+Console.WriteLine("**** Day 7 ****");
+var day7 = new Day7("./data/day7.txt");
+day7.ParseInput();
+Console.WriteLine($"Sum of sizes of directories at most 100,000: {day7.GetSumOfSizesOfDirectories(100000)}");
+Console.WriteLine($"The size of the smallest directory to delete: {day7.GetSizeOfSmallestDirectoryAboveThreshold(70000000, 30000000)}");
+
+Console.WriteLine();
+Console.WriteLine("**** Day 8 ****");
+var day8 = new Day8("./data/day8.txt");
+Console.WriteLine($"Trees visible from the edge: {day8.CountVisibleTrees()}");
+//Console.WriteLine($"The size of the smallest directory to delete: {day7.GetSizeOfSmallestDirectoryAboveThreshold(70000000, 30000000)}");
