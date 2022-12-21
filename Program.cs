@@ -49,4 +49,4 @@ Console.WriteLine();
 Console.WriteLine("**** Day 8 ****");
 var day8 = new Day8("./data/day8.txt");
 Console.WriteLine($"Trees visible from the edge: {day8.CountVisibleTrees()}");
-//Console.WriteLine($"The size of the smallest directory to delete: {day7.GetSizeOfSmallestDirectoryAboveThreshold(70000000, 30000000)}");
+Console.WriteLine($"The highest scenic score is: {day8.HighestScenicScore()}");

@@ -18,12 +18,26 @@ namespace Advent2022
         public Day8(string inputFilePath)
         {
             _input = File.ReadAllText(inputFilePath);
+            InitializeForest();
+        }
+
+        public int HighestScenicScore()
+        {
+            var highestScore = 0;
+            for (var x = 0; x < _forestWidth; x++)
+            {
+                for (var y = 0; y < _forestHeight; y++)
+                {
+                    var scenicScore = CalculateScenicScore(x, y);
+                    if (scenicScore > highestScore) highestScore = scenicScore;
+                }
+            }
+
+            return highestScore;
         }
 
         public int CountVisibleTrees()
         {
-            InitializeForest();
-
             var visibleCount = 0;
             for (var x = 0; x < _forestWidth; x++)
             {
@@ -65,7 +79,64 @@ namespace Advent2022
             return visibleCount;
         }
 
-        public bool VisibleInDirection(int x, int y, Direction direction)
+        private int CalculateScenicScore(int x, int y)
+        {
+            var upScore = ViewingDistanceInDirection(x, y, Direction.Up);
+            var downScore = ViewingDistanceInDirection(x, y, Direction.Down);
+            var leftScore = ViewingDistanceInDirection(x, y, Direction.Left);
+            var rightScore = ViewingDistanceInDirection(x, y, Direction.Right);
+
+            return upScore * leftScore * downScore * rightScore;
+        }
+
+        private int ViewingDistanceInDirection(int x, int y, Direction direction)
+        {
+            var treeValue = _forest[x, y];
+            var viewingDistance = 0;
+            switch (direction)
+            {
+                case Direction.Up:
+                    y--;
+                    while (y >= 0)
+                    {
+                        viewingDistance++;
+                        if (_forest[x, y] >= treeValue) break;
+                        y--;
+                    }
+                    return viewingDistance;
+                case Direction.Down:
+                    y++;
+                    while (y < _forestHeight)
+                    {
+                        viewingDistance++;
+                        if (_forest[x, y] >= treeValue) break;
+                        y++;
+                    }
+                    return viewingDistance;
+                case Direction.Left:
+                    x--;
+                    while (x >= 0)
+                    {
+                        viewingDistance++;
+                        if (_forest[x, y] >= treeValue) break;
+                        x--;
+                    }
+                    return viewingDistance;
+                case Direction.Right:
+                    x++;
+                    while (x < _forestWidth)
+                    {
+                        viewingDistance++;
+                        if (_forest[x, y] >= treeValue) break;
+                        x++;
+                    }
+                    return viewingDistance;
+                default:
+                    throw new ArgumentException("Could not process direction");
+            }
+        }
+
+        private bool VisibleInDirection(int x, int y, Direction direction)
         {
             var treeValue = _forest[x, y];
             switch (direction)
